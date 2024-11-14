@@ -43,7 +43,7 @@ body {
 }
 
 header { 
-    position: fixed;
+    position: flex;
     top: 0;
     left: 0;
     width: 100%;
@@ -242,4 +242,40 @@ button:hover {
     cursor: pointer;
     gap: 2.5rem; 
     color: var(--color-1);
+}
+
+.category { 
+    margin-bottom: 3rem;
+}
+
+.category-content { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
+    gap: 5px;    
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,.7);
+    justify-items: center;
+    border-radius: 0.5rem;
+    margin-right: 2rem ;
+    margin-left: 2rem ;
+}
+
+.cat-center-text { 
+    margin-top: 5rem;
+    justify-items: center;
+}
+
+.row { 
+    margin: 1rem;
+    text-justify: center;
+}
+
+.row-content { 
+    margin: 0.5rem;
+}
+
+.row-content i{ 
+    justify-self: center;
 }

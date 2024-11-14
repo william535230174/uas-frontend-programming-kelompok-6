@@ -7,36 +7,42 @@
         <title>E-Commerce | Shopping</title>
         <link rel="stylesheet" href="./css/style.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     </head>
+
     <body>
         <header>
             <div class="header-top">
                 <div class="header-container">
                     <a class="header-title" href="index.html">E-Commerce</a>
                     <ul class="header-top-links">
-                        <li><a href="#">Support US</a></li>
-                        <li><a href="#">Information</a></li>
+                        <li><a href="#contact">Support US</a></li>
+                        <li><a href="#informasi">Information</a></li>
                         <li><a href="mailto:ecommerce@gmail.co.id">ecommerce@gmail.co.id</a></li>                       
                         <li><a href="tel:+6281244642810">+62 81244642810</a></li>
                     </ul>
                 </div>
             </div> 
 
-            <nav class="nav container">
-                <a href="#" class="logo">E-Commerce</a>
+            <div class="nav container">
+                <a href="index.html" class="logo">E-Commerce</a>
 
-                <div class="nav-search">
-
-                </div>
+                <div class="nav-search"></div>
 
                 <div class="nav icon">
                     <i class='bx bx-cart'></i> 
                     <i class='bx bx-user'></i> 
                 </div>
-            </nav> 
+            </div> 
         </header>
 
-        <br><br><br><br><br>
+        <br>
+
+        <div class="ecommerce"> 
+            <div ng-view=""></div>
+        </div>
+
+        <br>
 
         <section class="contact" id="contact"> 
             <div class="con"> 
@@ -127,6 +133,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="./js/app.js"></script>
     </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="shoeStoreApp">
+  <head>
+    <title>Shoe Store</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="ProductController as ctrl">
+    <div class="products" id="products">Products</div>
+    <div class="container">
+      <div class="row">
+        <div class="card" ng-repeat="product in ctrl.products">
+          <img
+            ng-src="{{product.image}}"
+            alt="{{product.name}}"
+            height="100"
+            width="100"
+          />
+          <h3>{{product.name}}</h3>
+          <p>{{product.description}}</p>
+          <div class="price">{{product.price | currency}}</div>
+          <div class="stars">
+            <i
+              class="fas fa-star"
+              ng-repeat="star in product.stars track by $index"
+            ></i>
+          </div>
+          <button class="btn" ng-click="ctrl.addToCart(product)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

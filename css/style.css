@@ -19,6 +19,7 @@
     --color-5: #730404; 
     --color-6: #b40404; 
     --color-7: #980404; 
+    --color-8: rgb(184, 184, 184);
 }
 
 img { 
@@ -68,6 +69,20 @@ header {
     font-size: 2rem;
     cursor: pointer;
     gap: 2.5rem; 
+    color: var(--color-1);
+    transition: all ease-in-out 0.1s;
+}
+
+.bx-cart:hover { 
+    color: #730404;
+}
+
+.bx-user:hover { 
+    color: #730404;
+}
+
+.bx-heart:hover { 
+    color: #730404;
 }
 
 .header-top { 
@@ -158,7 +173,7 @@ button {
     padding: 1em 1.8em;
     background: var(--color-6);
     display: flex;
-    transition: 0.2s background;
+    transition: 0.2s;
     align-items: center;
     gap: 0.6em;
     font-weight: bold;
@@ -245,7 +260,7 @@ button:hover {
 }
 
 .category { 
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .category-content { 
@@ -255,14 +270,14 @@ button:hover {
     align-items: center;
     justify-content: center;
     margin-top: 3rem;
-    box-shadow: 0 5px 10px rgba(0,0,0,.7);
+    box-shadow: 0 1px 10px var(--color-8);
     justify-items: center;
     border-radius: 0.5rem;
     margin-right: 2rem ;
     margin-left: 2rem ;
 }
 
-.cat-center-text { 
+.section-title { 
     margin-top: 5rem;
     justify-items: center;
 }
@@ -270,6 +285,12 @@ button:hover {
 .row { 
     margin: 1rem;
     text-justify: center;
+    cursor: pointer;
+}
+
+.row:hover { 
+    color: var(--color-5);
+    transition: ease-in-out all 0.1s;
 }
 
 .row-content { 
@@ -278,4 +299,60 @@ button:hover {
 
 .row-content i{ 
     justify-self: center;
+}
+
+.latest-product { 
+    max-width: 1920px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 7rem;
+}
+
+.latest-product img { 
+    width: 100%;
+}
+
+.prod-row { 
+    display: gird;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
+    gap: 20px;
+    margin: 2rem; 
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 10px var(--color-8);
+}
+
+.prod-col {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+}
+
+.promo-banner { 
+    width: 90%;
+    height: auto;
+    justify-self: center;
+}
+
+.brand { 
+    margin-left: 2rem;
+    margin-right: 2rem;
+    justify-self: center;
+}
+
+.brand img { 
+    width: 8rem;
+    height: auto;
+    cursor: pointer;
+}
+
+.about { 
+    box-shadow: 0 1px 10px var(--color-8);
+}
+
+.about-text { 
+    margin-top: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 3rem;
 }

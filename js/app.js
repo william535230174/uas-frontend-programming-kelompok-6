@@ -6,17 +6,17 @@ myApp.config([
     function ($routeProvider, $locationProvider) {
         $locationProvider.hashPrefix(''); 
         $routeProvider
-            .when('/', { 
+            .when('/cart', { 
                 controller: 'HomeController',
                 templateUrl: 'view/home.html',
             })
-            .when('/about', {
-                controller: 'NoteController',
-                templateUrl: 'view/view2.html',
+            .when('/', {
+                controller: 'CartController',
+                templateUrl: 'view/cart.html',
             })
-            .when('/edit', {
-                controller: 'EditController',
-                templateUrl: 'view/view3.html',
+            .when('/wishlist', {
+                controller: 'WishlistController',
+                templateUrl: 'view/wishlist.html',
             })
             .otherwise({ redirectTo: '/' });
     }

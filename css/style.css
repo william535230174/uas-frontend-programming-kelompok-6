@@ -74,15 +74,15 @@ header {
 }
 
 .bx-cart:hover { 
-    color: #730404;
+    color: var(--color-5);
 }
 
 .bx-user:hover { 
-    color: #730404;
+    color: var(--color-5);
 }
 
 .bx-heart:hover { 
-    color: #730404;
+    color: var(--color-5);
 }
 
 .header-top { 
@@ -165,7 +165,7 @@ header {
     margin-right: 1rem;
 }
 
-button {
+button, .btn{
     box-sizing: border-box;
     border: 0;
     border-radius: 20px;
@@ -355,4 +355,97 @@ button:hover {
     margin-left: 5rem;
     margin-right: 5rem;
     margin-bottom: 3rem;
+}
+
+#cart table { 
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+    margin-top: 4rem;
+}
+
+#cart table img {
+    width: 70px;
+}
+
+.bx-trash {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--color-7);
+    cursor: pointer;
+}
+
+.bx-trash:hover{
+    color: var(--color-5);
+}
+
+.cart { 
+    margin: 5rem;
+}
+
+table { 
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-info { 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th { 
+    text-align: left;
+    padding: 0.5rem;
+    color: white;
+    background-color: black;
+    font-weight: 400;
+}
+
+td { 
+    padding: 1rem 0.5rem;
+}
+
+td input { 
+    width: 5rem;
+    height: 3rem;
+    padding: 0.5rem;
+}
+
+td a { 
+    color: red;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+td a:hover { 
+    color: rgb(167, 0, 0);
+    transition: all 0.5s ease-in-out;
+}
+
+td img { 
+    width: 8rem;
+    height: 8rem;
+    margin-right: 1rem;
+}
+
+.total-price { 
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.total-price table{ 
+    border-top: 3px solid black;
+    width: 100%;
+    max-width: 40%;
+}
+
+.td:last-child { 
+    text-align: right;
+}
+
+.tr:last-child { 
+    text-align: right;
 }

@@ -1,11 +1,16 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #333;
+  margin: 20px 0;
 }
 
 .products {
@@ -15,19 +20,14 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   max-width: 1200px;
-  align-items: center;
+  width: 100%;
 }
 
 .row {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
   flex-wrap: wrap;
-  width: 100%;
+  gap: 20px;
 }
 
 .card {
@@ -39,15 +39,11 @@ body {
   text-align: center;
   width: calc(20% - 20px);
   box-sizing: border-box;
-  position: relative;
-  margin-bottom: 20px;
 }
 
 .card img {
   width: 150px;
   height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
 .card h3 {
@@ -58,27 +54,66 @@ body {
 .card p {
   color: #888;
   font-size: 14px;
-  margin: 10px 0;
 }
 
 .card .price {
   font-size: 18px;
   font-weight: bold;
-  margin: 10px 0;
 }
 
 .card .stars {
   color: #ffcc00;
-  margin: 10px 0;
 }
 
 .card .btn {
   background: linear-gradient(to right, #b73616, #6e29c8);
-  border: none;
-  border-radius: 5px;
   color: white;
-  cursor: pointer;
-  font-size: 14px;
+  border: none;
   padding: 10px 20px;
-  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cart {
+  margin-top: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  width: 60%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart h2 {
+  text-align: center;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.cart p {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.buy-btn {
+  background: linear-gradient(to right, #28a745, #218838);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
 }

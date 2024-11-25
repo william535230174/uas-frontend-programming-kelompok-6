@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="electronicStore">
+<html ng-app="MyApp">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electronic Store</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -10,31 +13,59 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   </head>
   <body ng-controller="ProductController as ctrl">
-    <div class="products" id="products">Products</div>
-    <div class="container">
-      <div class="row">
-        <div class="card" ng-repeat="product in ctrl.products">
-          <img
-            ng-src="{{product.image}}"
-            alt="{{product.name}}"
-            height="100"
-            width="100"
-          />
-          <h3>{{product.name}}</h3>
-          <p>{{product.description}}</p>
-          <div class="price">{{product.price | currency}}</div>
-          <div class="stars">
-            <i
-              class="fas fa-star"
-              ng-repeat="star in product.stars track by $index"
-            ></i>
+    <header>
+      <h1>Electronic Store</h1>
+    </header>
+
+    <main>
+      <div class="products">
+        <h2>Products</h2>
+        <div class="container">
+          <div class="row">
+            <div class="card" ng-repeat="product in ctrl.products">
+              <img
+                ng-src="{{product.image}}"
+                alt="{{product.name}}"
+                class="product-image"
+              />
+              <h3>{{product.name}}</h3>
+              <p>{{product.description}}</p>
+              <div class="price">{{product.price | currency}}</div>
+              <div class="stars">
+                <i
+                  class="fas fa-star"
+                  ng-repeat="star in [].constructor(product.stars) track by $index"
+                ></i>
+              </div>
+              <button class="btn" ng-click="ctrl.addToCart(product)">
+                Add to Cart
+              </button>
+            </div>
           </div>
-          <button class="btn" ng-click="ctrl.addToCart(product)">
-            Add to Cart
-          </button>
         </div>
       </div>
-    </div>
+
+      <div class="cart">
+        <h2>Shopping Cart</h2>
+        <ul>
+          <li ng-repeat="item in ctrl.cart">
+            {{item.name}} - {{item.price | currency}}
+            <button class="btn remove-btn" ng-click="ctrl.removeFromCart(item)">
+              Remove
+            </button>
+          </li>
+        </ul>
+        <p ng-if="ctrl.cart.length === 0">Your cart is empty.</p>
+        <div ng-if="ctrl.cart.length > 0">
+          <p>Total: {{ctrl.calculateTotal() | currency}}</p>
+          <button class="btn buy-btn" ng-click="ctrl.buyItems()">Buy</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2024 Electronic Store. All rights reserved.</p>
+    </footer>
 
     <script src="app.js"></script>
   </body>

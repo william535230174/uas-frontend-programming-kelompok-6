@@ -397,8 +397,8 @@ table {
 th { 
     text-align: left;
     padding: 0.5rem;
-    color: white;
-    background-color: black;
+    color: var(--color-1);
+    background-color: var(--color-3);
     font-weight: 400;
 }
 
@@ -437,7 +437,7 @@ td img {
 }
 
 .total-price table{ 
-    border-top: 3px solid black;
+    border-top: 3px solid var(--color-6);
     width: 100%;
     max-width: 40%;
 }
@@ -448,4 +448,8 @@ td img {
 
 .tr:last-child { 
     text-align: right;
+}
+
+.checkout-btn { 
+    margin-top: 3rem;
 }

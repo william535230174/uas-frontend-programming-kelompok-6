@@ -34,7 +34,12 @@ function calculateTotal() {
 
     cart.forEach(item => {
         subtotal += item.price * item.quantity; 
-    }); 
+    });
+
+    // Shipping fee tetap Rp10.000 jika ada barang, Rp0 jika tidak ada
+    let shippingFee = cart.length > 0 ? 10000 : 0; 
+    let tax = subtotal * 0.1; 
+    let totalPayment = subtotal + tax + shippingFee; 
 
     document.querySelector('.total-price table').innerHTML = `
         <tr>
@@ -43,17 +48,25 @@ function calculateTotal() {
         </tr>
         <tr>
             <td>Tax</td>
-            <td>${formatCurrency(subtotal * 0.1)}</td>
+            <td>${formatCurrency(tax)}</td>
         </tr>
         <tr>
             <td>Shipping Fee</td>
-            <td>${formatCurrency((subtotal + tax) * 0.1)}</td>
+            <td>${formatCurrency(shippingFee)}</td>
         </tr>
         <tr>
             <td>Payment</td>
-            <td>${formatCurrency(subtotal + (subtotal * 0.1))}</td>
+            <td>${formatCurrency(totalPayment)}</td>
         </tr>
     `;
+}
+
+function formatCurrency(amount) { 
+    return new Intl.NumberFormat('id-ID', {
+        style: "currency", 
+        currency: "IDR", 
+        minimumFractionDigits: 0 
+    }).format(amount).replace('Rp', 'IDR'); 
 }
 
 function formatCurrency(amount) { 

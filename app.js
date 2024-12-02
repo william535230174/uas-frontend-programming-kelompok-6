@@ -1,122 +1,47 @@
-angular.module("MyApp", []).controller("ProductController", function () {
-  this.products = [
-    {
-      id: 1,
-      name: "Mechanical Keyboard",
-      description: "Dengan tombol responsif dan memakai blue switch.",
-      price: 100.99,
-      stars: 5,
-      image: "images/keyboard1.jpg",
-    },
-    {
-      id: 2,
-      name: "Wireless Mouse",
-      description: "Desain yang ergonomis membuat tangan tidak lelah.",
-      price: 100.99,
-      stars: 5,
-      image: "images/mouse1.jpg",
-    },
-    {
-      id: 3,
-      name: "Gaming Headset",
-      description: "Dilengkapi suara surround yang imersif dan bantalan empuk.",
-      price: 100.99,
-      stars: 5,
-      image: "images/headset1.jpg",
-    },
-    {
-      id: 4,
-      name: "Monitor",
-      description: "Monitor ini dilengkapi resolusi tinggi dan fitur eye-care.",
-      price: 100.99,
-      stars: 5,
-      image: "images/monitor1.jpg",
-    },
-    {
-      id: 5,
-      name: "Laptop",
-      description: "Dirancang untuk produktivitas dengan prosesor cepat.",
-      price: 100.99,
-      stars: 5,
-      image: "images/laptop1.jpg",
-    },
-    {
-      id: 6,
-      name: "Wired Mouse",
-      description:
-        "Kabel yang fleksibel memberikan koneksi langsung tanpa gangguan, Sangat cocok saat sedang berkerja.",
-      price: 100.99,
-      stars: 5,
-      image: "images/mouse2.jpg",
-    },
-    {
-      id: 7,
-      name: "Earphone",
-      description: "Dengan suara yang seimbang dan bass yang mantap.",
-      price: 100.99,
-      stars: 5,
-      image: "images/earphone1.jpg",
-    },
-    {
-      id: 8,
-      name: "Magic Keyboard",
-      description:
-        "Memberikan pengalaman mengetik yang lebih nyaman dan responsif.",
-      price: 100.99,
-      stars: 5,
-      image: "images/keyboard2.jpg",
-    },
-    {
-      id: 9,
-      name: "Usb Cable",
-      description:
-        "Memberikan koneksi yang cepat dan stabil antara perangkat Anda.",
-      price: 100.99,
-      stars: 5,
-      image: "images/kabel1.jpg",
-    },
-    {
-      id: 10,
-      name: "Speaker",
-      description:
-        "Dirancang untuk memberikan suara jernih dan bass yang dalam, Speaker ini menawarkan kualitas suara yang optimal, baik untuk musik, film, maupun gaming.",
-      price: 100.99,
-      stars: 5,
-      image: "images/speaker1.jpg",
-    },
-  ];
+angular.module("MyApp", []).controller("ProductController", function ($http) {
+  const ctrl = this;
 
-  this.cart = [];
+  ctrl.products = [];
+  ctrl.cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  this.addToCart = function (product) {
-    const existingProduct = this.cart.find((item) => item.id === product.id);
+  $http.get("products.json").then(function (response) {
+    ctrl.products = response.data;
+  });
+
+  ctrl.addToCart = function (product) {
+    const existingProduct = ctrl.cart.find((item) => item.id === product.id);
 
     if (existingProduct) {
       alert(product.name + " sudah ada di keranjang!");
     } else {
-      this.cart.push(product);
+      ctrl.cart.push(product);
       alert(product.name + " berhasil ditambahkan ke keranjang!");
+      localStorage.setItem("cart", JSON.stringify(ctrl.cart));
     }
   };
 
-  this.removeFromCart = function (product) {
-    const index = this.cart.indexOf(product);
+  ctrl.removeFromCart = function (product) {
+    const index = ctrl.cart.indexOf(product);
     if (index !== -1) {
-      this.cart.splice(index, 1);
+      ctrl.cart.splice(index, 1);
       alert(product.name + " berhasil dihapus dari keranjang!");
+      localStorage.setItem("cart", JSON.stringify(ctrl.cart));
     }
   };
 
-  this.calculateTotal = function () {
-    return this.cart.reduce((total, item) => total + item.price, 0);
+  ctrl.calculateTotal = function () {
+    return ctrl.cart.reduce((total, item) => total + item.price, 0);
   };
 
-  this.buyItems = function () {
-    if (this.cart.length === 0) {
-      alert("Your cart is empty!");
+  ctrl.buyItems = function () {
+    if (ctrl.cart.length === 0) {
+      alert("Keranjang Anda kosong!");
     } else {
-      alert("Thank you for your purchase! Total: " + this.calculateTotal());
-      this.cart = [];
+      alert(
+        "Terima kasih atas pembelian Anda! Total: " + ctrl.calculateTotal()
+      );
+      ctrl.cart = [];
+      localStorage.removeItem("cart");
     }
   };
 });

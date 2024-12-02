@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Mechanical Keyboard",
     "description": "Dengan tombol responsif dan memakai blue switch.",
-    "price": 100.99,
+    "price": 70.99,
     "stars": 5,
     "image": "images/keyboard1.jpg"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "name": "Wireless Mouse",
     "description": "Desain yang ergonomis membuat tangan tidak lelah.",
-    "price": 100.99,
+    "price": 80.55,
     "stars": 5,
     "image": "images/mouse1.jpg"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "name": "Gaming Headset",
     "description": "Dilengkapi suara surround yang imersif dan bantalan empuk.",
-    "price": 100.99,
+    "price": 90.5,
     "stars": 5,
     "image": "images/headset1.jpg"
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "name": "Laptop",
     "description": "Dirancang untuk produktivitas dengan prosesor cepat.",
-    "price": 100.99,
+    "price": 150.2,
     "stars": 5,
     "image": "images/laptop1.jpg"
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "name": "Wired Mouse",
     "description": "Kabel yang fleksibel memberikan koneksi langsung tanpa gangguan, Sangat cocok saat sedang berkerja.",
-    "price": 100.99,
+    "price": 60.55,
     "stars": 5,
     "image": "images/mouse2.jpg"
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "name": "Earphone",
     "description": "Dengan suara yang seimbang dan bass yang mantap.",
-    "price": 100.99,
+    "price": 40.73,
     "stars": 5,
     "image": "images/earphone1.jpg"
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "name": "Magic Keyboard",
     "description": "Memberikan pengalaman mengetik yang lebih nyaman dan responsif.",
-    "price": 100.99,
+    "price": 30.99,
     "stars": 5,
     "image": "images/keyboard2.jpg"
   },
@@ -67,7 +67,7 @@
     "id": 9,
     "name": "Usb Cable",
     "description": "Memberikan koneksi yang cepat dan stabil antara perangkat Anda.",
-    "price": 100.99,
+    "price": 73.99,
     "stars": 5,
     "image": "images/kabel1.jpg"
   },
@@ -75,7 +75,7 @@
     "id": 10,
     "name": "Speaker",
     "description": "Dirancang untuk memberikan suara jernih dan bass yang dalam, Speaker ini menawarkan kualitas suara yang optimal, baik untuk musik, film, maupun gaming.",
-    "price": 100.99,
+    "price": 32.99,
     "stars": 5,
     "image": "images/speaker1.jpg"
   }

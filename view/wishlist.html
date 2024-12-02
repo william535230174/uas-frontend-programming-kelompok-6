@@ -1,9 +1,20 @@
 <div ng-controller="WishlistController" id="view">
-    <div class="section-title">
-        <h2>WISHLIST</h2>
-    </div>
-
     <div class="wishlist-content">
-        <p>Put your favourite in here</p>
+        <div class="section-title">
+            <h2>WISHLIST</h2>
+        </div>
+        <p>Browse product and add your product to your wishlist here.</p>
+
+        <div class="prod-row">
+            <div class="prod-col" ng-repeat="item in wishlist">
+                <img src="{{item.image}}" alt="Product Image">
+                <h4>{{item.name}}</h4>
+                <p class="price">Rp{{item.price | number}}</p>
+                <button class="add-to-cart" ng-click="addToCart(item)"> + Cart</button>
+                <a class="remove-from-wishlist" ng-click="removeFromWishlist(item)">
+                    <i class='bx bxs-trash-alt'></i>
+                </a>
+            </div>
+        </div>
     </div>
 </div>

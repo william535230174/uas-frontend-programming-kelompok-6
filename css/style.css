@@ -205,6 +205,10 @@ button:hover {
     justify-content: center;
 }
 
+.footer-logo a { 
+    color: var(--color-1);
+}
+
 .footer-sections { 
     display: flex;
     justify-content: space-between;
@@ -475,4 +479,9 @@ td img {
 
 .checkout-btn { 
     margin-top: 3rem;
+}
+
+.wishlist-content p { 
+    justify-self: center;
+    margin-top: 1.5rem;
 }

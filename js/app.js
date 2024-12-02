@@ -6,11 +6,11 @@ myApp.config([
     function ($routeProvider, $locationProvider) {
         $locationProvider.hashPrefix(''); 
         $routeProvider
-            .when('/cart', { 
+            .when('/', { 
                 controller: 'HomeController',
                 templateUrl: 'view/home.html',
             })
-            .when('/', {
+            .when('/cart', {
                 controller: 'CartController',
                 templateUrl: 'view/cart.html',
             })

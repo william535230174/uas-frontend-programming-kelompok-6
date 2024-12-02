@@ -36,7 +36,6 @@ function calculateTotal() {
         subtotal += item.price * item.quantity; 
     });
 
-    // Shipping fee tetap Rp10.000 jika ada barang, Rp0 jika tidak ada
     let shippingFee = cart.length > 0 ? 10000 : 0; 
     let tax = subtotal * 0.1; 
     let totalPayment = subtotal + tax + shippingFee; 

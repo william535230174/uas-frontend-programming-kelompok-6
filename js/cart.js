@@ -1,98 +1,38 @@
-function displayCart() { 
-    let cart = JSON.parse(localStorage.getItem('cart')) || []; 
-    let cartTableBody = document.querySelector('.cart table tbody'); 
+myApp.controller('CartController', ['$scope', function ($scope) { 
+        $scope.cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    cartTableBody.innerHTML = ''; 
+        $scope.calculateTotals = function() { 
+            $scope.subtotal = $scope.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            $scope.tax = $scope.subtotal * 0.1;
+            $scope.shippingFee = $scope.cart.length > 0 ? 20000 : 0;
+            $scope.total = $scope.subtotal + $scope.tax + $scope.shippingFee; 
+        }; 
 
-    cart.forEach(item => {
-        console.log("Image path:", `product/${item.image}`); 
-        let row = `
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="${item.image}" alt="product-image" style="width: 100px;">
-                        <div>
-                            <p>${item.name}</p>
-                            <a href="javascript:void(0);" onclick="removeFromCart('${item.name}')">REMOVE</a>
-                        </div>
-                    </div>
-                </td>
-                <td>${formatCurrency(item.price)}</td>
-                <td><input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.name}', this.value)"></td>
-                <td>${formatCurrency(item.price * item.quantity)}</td>
-            </tr>
-        `; 
-        cartTableBody.innerHTML += row;
-    });
+        $scope.formatCurrency = function (amount) {
+            return new Intl.NumberFormat('id-ID', { 
+                style: "currency",
+                currency: "IDR", 
+                minimumFractionDigits: 0
+            }).format(amount).replace('Rp','IDR'); 
+        };
 
-    calculateTotal(); 
-}
+        $scope.removeFromCart = function (productName) { 
+            $scope.cart = $scope.cart.filter(item => item.name !== productName); 
+            $scope.saveCart(); 
+            $scope.calculateTotals(); 
+        }; 
 
-function calculateTotal() { 
-    let cart = JSON.parse(localStorage.getItem('cart')) || []; 
-    let subtotal = 0; 
+        $scope.updateQuantity = function (item) { 
+            if (item.quantity > 1) {
+                item.quantity = 1; 
+            }
+            $scope.saveCart(); 
+            $scope.calculateTotals(); 
+        }; 
 
-    cart.forEach(item => {
-        subtotal += item.price * item.quantity; 
-    });
+        $scope.saveCart = function() { 
+            localStorage.setItem('cart', JSON.stringify($scope.cart));
+        }; 
 
-    let shippingFee = cart.length > 0 ? 10000 : 0; 
-    let tax = subtotal * 0.1; 
-    let totalPayment = subtotal + tax + shippingFee; 
-
-    document.querySelector('.total-price table').innerHTML = `
-        <tr>
-            <td>Subtotal</td>
-            <td>${formatCurrency(subtotal)}</td>
-        </tr>
-        <tr>
-            <td>Tax</td>
-            <td>${formatCurrency(tax)}</td>
-        </tr>
-        <tr>
-            <td>Shipping Fee</td>
-            <td>${formatCurrency(shippingFee)}</td>
-        </tr>
-        <tr>
-            <td>Payment</td>
-            <td>${formatCurrency(totalPayment)}</td>
-        </tr>
-    `;
-}
-
-function formatCurrency(amount) { 
-    return new Intl.NumberFormat('id-ID', {
-        style: "currency", 
-        currency: "IDR", 
-        minimumFractionDigits: 0 
-    }).format(amount).replace('Rp', 'IDR'); 
-}
-
-function formatCurrency(amount) { 
-    return new Intl.NumberFormat('id-ID', {
-        style: "currency", 
-        currency: "IDR", 
-        minimumFractionDigits: 0 
-    }).format(amount).replace('Rp', 'IDR'); 
-}
-
-function removeFromCart(productName) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.filter(item => item.name !== productName);
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    displayCart(); 
-}
-
-function updateQuantity(productName, newQuantity) { 
-    let cart = JSON.parse(localStorage.getItem('cart')) || []; 
-    let productIndex = cart.findIndex(item => item.name === productName); 
-
-    if (productIndex > -1) { 
-        cart[productIndex].quantity = parseInt(newQuantity); 
-        localStorage.setItem('cart', JSON.stringify(cart)); 
-        displayCart(); 
-    }
-}
-
-window.onload = displayCart; 
+        $scope.calculateTotals(); 
+    }]); 

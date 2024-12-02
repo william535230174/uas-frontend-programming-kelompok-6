@@ -306,7 +306,6 @@ button:hover {
 
 .latest-product { 
     max-width: 100%;
-    margin: 0 auto;
     padding: 0 15px;
     margin-bottom: 3rem;
 }
@@ -323,7 +322,6 @@ button:hover {
     display: flex;
     gap: 20px;
     padding: 10px;
-    margin: 0 auto; 
 }
 
 .prod-col {
@@ -346,7 +344,6 @@ button:hover {
 }
 
 .promo-banner { 
-    width: 90%;
     height: auto;
     justify-self: center;
 }
@@ -368,8 +365,6 @@ button:hover {
     padding-top: 0.1px;
     margin-top: 4rem;
     padding-bottom: 2rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
     margin-bottom: 2rem;
     border-radius: 10px;
 }

@@ -1,6 +1,6 @@
 <div ng-controller="CartController" id="view">
     <div class="section-title">
-        <h2>KERANJANG</h2>
+        <h2>CART</h2>
     </div>
     
     <section class="cart">
@@ -13,7 +13,24 @@
                     <th>Subtotal</th>
                 </tr>
             </thead>
+
             <tbody>
+                <tr ng-repeat="item in cart">
+                    <td>
+                        <div class="cart-info">
+                            <img ng-src="{{item.image}}" alt="product-img">
+                            <div>
+                                <p>{{ item.name }}</p>
+                                <a href="javascript:void(0);" ng-click="removeItem(item.name)">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{formatCurrency(item.price)}}</td>
+                    <td>
+                        <input type="number" ng-model="item.quantity" min="1" ng-change="updateQuantity(item)">
+                    </td>
+                    <td>{{formatCurrency(item.price * item.quantity)}}</td>
+                </tr>
             </tbody>
         </table>
         
@@ -21,15 +38,19 @@
             <table>
                 <tr>
                     <td>Subtotal</td>
+                    <td>{{formatCurrency(subtotal)}}</td>
                 </tr>
                 <tr>
                     <td>Tax</td>
+                    <td>{{formatCurrency(tax)}}</td>
                 </tr>
                 <tr>
                     <td>Shipping Fee</td>
+                    <td>{{formatCurrency(shippingFee)}}</td>
                 </tr>
                 <tr>
                     <td>Payment</td>
+                    <td>{{formatCurrency(totalPayment)}}</td>
                 </tr>
             </table>
             <a href="" class="checkout-btn btn">CHECKOUT</a>

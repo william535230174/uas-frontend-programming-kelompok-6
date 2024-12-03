@@ -485,3 +485,88 @@ td img {
     justify-self: center;
     margin-top: 1.5rem;
 }
+
+.checkout-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    min-height: 100vh;
+}
+
+.checkout-container form { 
+    padding: 20px;
+    width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.checkout-row { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.checkout-col { 
+    flex: 1 1 300px;
+}
+
+.checkout-title { 
+    font-size: 24px;
+    color: var(--color-1);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.checkout-inputBox { 
+    margin: 15px 0;
+}
+
+.checkout-inputBox span { 
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-4);
+    margin-bottom: 8px;
+}
+
+.checkout-inputBox input { 
+    width: 100%;
+    border: 1px solid var(--color-4);
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.checkout-inputBox input:focus {
+    border: 1px solid var(--color-1);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-flex { 
+    display: flex;
+    gap: 15px;
+}
+
+.checkout-flex .checkout-inputBox { 
+    flex: 1;
+}
+
+.checkout-inputBox img { 
+    height: 34px;
+    margin-top: 8px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.pay-btn { 
+    display: flex;
+    justify-self: right;
+}
+
+.error-text { 
+    color: var(--color-6);
+    margin-top: 5px;
+    display: block;
+}

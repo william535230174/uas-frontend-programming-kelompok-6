@@ -18,6 +18,10 @@ myApp.config([
                 controller: 'WishlistController',
                 templateUrl: 'view/wishlist.html',
             })
+            .when('/checkout', { 
+                controller: 'CheckoutController', 
+                templateUrl: 'view/checkout.html',
+            })
             .otherwise({ redirectTo: '/' });
     }
 ]); 

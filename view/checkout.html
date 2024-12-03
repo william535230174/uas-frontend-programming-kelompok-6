@@ -1,0 +1,89 @@
+<div class="checkout-container" ng-controller="CheckoutController">
+    <form name="checkout-form" ng-submit="submitForm()">
+        <div class="checkout-row">
+            <div class="checkout-col">
+                <h3 class="checkout-title">IDENTITY</h3>
+
+                <div class="checkout-inputBox" ng-class="{'error': !data.fullName}">
+                    <span>Full Name: </span>
+                    <input type="text" placeholder="Your Full Name..." ng-model="data.fullName">
+                    <small class="error-text" ng-show="!data.fullName">Full Name is Required!</small>
+                </div>
+
+                <div class="checkout-inputBox" ng-class="{'error': !data.email}">
+                    <span>Email Address: </span>
+                    <input type="text" placeholder="example@gmail.com ..." ng-model="data.email">
+                    <small class="error-text" ng-show="!data.email">Email Address is Required!</small>
+                </div>
+
+                <div class="checkout-inputBox" ng-class="{'error': !data.address}">
+                    <span>Address: </span>
+                    <input type="text" placeholder="Street - Number - City" ng-model="data.address">
+                    <small class="error-text" ng-show="!data.address">Address is Required!</small>
+                </div>
+
+                <div class="checkout-inputBox" ng-class="{'error': !data.city}">
+                    <span>City: </span>
+                    <input type="text" placeholder="City..." ng-model="data.city">
+                    <small class="error-text" ng-show="!data.city">City is Required!</small>
+                </div>
+
+                <div class="checkout-flex">
+                    <div class="checkout-inputBox" ng-class="{'error': !data.country}">
+                        <span>Country: </span>
+                        <input type="text" placeholder="Country..." ng-model="data.country">
+                        <small class="error-text" ng-show="!data.country">Country is Required!</small>
+                    </div>
+    
+                    <div class="checkout-inputBox" ng-class="{'error': !data.postCode}">
+                        <span>Post Code: </span>
+                        <input type="number" placeholder="Post Code..." ng-model="data.postCode">
+                        <small class="error-text" ng-show="!data.postCode">Post Code is Required!</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-col">
+                <h3 class="checkout-title">PAYMENT</h3>
+                
+                <div class="checkout-inputBox">
+                    <span>Credit Cart Payment: </span>
+                    <img src="/assets/checkout/card_img.png" alt="card-img">
+                </div>
+
+                <div class="checkout-inputBox" ng-class="{'error': !data.cardName}">
+                    <span>Full Name: </span>
+                    <input type="text" placeholder="Your Full Name..." ng-model="data.cardName">
+                    <small class="error-text" ng-show="!data.cardName">Card Name is Required!</small>
+                </div>
+
+                <div class="checkout-inputBox" ng-class="{'error': !data.cardNumber}">
+                    <span>Card Number: </span>
+                    <input type="text" placeholder="1111-2222-3333-4444" ng-model="data.cardNumber">
+                    <small class="error-text" ng-show="!data.cardNumber">Card Number is Required!</small>
+                </div>
+
+                <div class="checkout-inputBox" ng-class="{'error': !data.expMonth}">
+                    <span>Exp Month: </span>
+                    <input type="text" placeholder="January - December" ng-model="data.expMonth">
+                    <small class="error-text" ng-show="!data.expMonth">Exp Month is Required!</small>
+                </div>
+
+                <div class="checkout-flex">
+                    <div class="checkout-inputBox" ng-class="{'error': !data.expYear}">
+                        <span>Exp Year: </span>
+                        <input type="number" placeholder="2024 - 2025" ng-model="data.expYear">
+                        <small class="error-text" ng-show="!data.expYear">Exp Year is Required!</small>
+                    </div>
+    
+                    <div class="checkout-inputBox" ng-class="{'error': !data.cvv}">
+                        <span>CVV: </span>
+                        <input type="number" placeholder="1234" ng-model="data.cvv">
+                        <small class="error-text" ng-show="!data.cvv">CVV is Required!</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="pay-btn btn">PAY</button>
+    </form>
+</div>

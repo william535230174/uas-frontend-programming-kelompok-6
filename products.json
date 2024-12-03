@@ -5,7 +5,8 @@
     "description": "Dengan tombol responsif dan memakai blue switch.",
     "price": 70.99,
     "stars": 5,
-    "image": "images/keyboard1.jpg"
+    "image": "images/keyboard1.jpg",
+    "category": "Keyboard"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "description": "Desain yang ergonomis membuat tangan tidak lelah.",
     "price": 80.55,
     "stars": 5,
-    "image": "images/mouse1.jpg"
+    "image": "images/mouse1.jpg",
+    "category": "Mouse"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "description": "Dilengkapi suara surround yang imersif dan bantalan empuk.",
     "price": 90.5,
     "stars": 5,
-    "image": "images/headset1.jpg"
+    "image": "images/headset1.jpg",
+    "category": "Headset"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "description": "Monitor ini dilengkapi resolusi tinggi dan fitur eye-care.",
     "price": 100.99,
     "stars": 5,
-    "image": "images/monitor1.jpg"
+    "image": "images/monitor1.jpg",
+    "category": "Monitor"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "description": "Dirancang untuk produktivitas dengan prosesor cepat.",
     "price": 150.2,
     "stars": 5,
-    "image": "images/laptop1.jpg"
+    "image": "images/laptop1.jpg",
+    "category": "Laptop"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "description": "Kabel yang fleksibel memberikan koneksi langsung tanpa gangguan, Sangat cocok saat sedang berkerja.",
     "price": 60.55,
     "stars": 5,
-    "image": "images/mouse2.jpg"
+    "image": "images/mouse2.jpg",
+    "category": "Mouse"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "description": "Dengan suara yang seimbang dan bass yang mantap.",
     "price": 40.73,
     "stars": 5,
-    "image": "images/earphone1.jpg"
+    "image": "images/earphone1.jpg",
+    "category": "Headset"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "description": "Memberikan pengalaman mengetik yang lebih nyaman dan responsif.",
     "price": 30.99,
     "stars": 5,
-    "image": "images/keyboard2.jpg"
+    "image": "images/keyboard2.jpg",
+    "category": "Keyboard"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "description": "Memberikan koneksi yang cepat dan stabil antara perangkat Anda.",
     "price": 73.99,
     "stars": 5,
-    "image": "images/kabel1.jpg"
+    "image": "images/kabel1.jpg",
+    "category": "Cable"
   },
   {
     "id": 10,
@@ -77,6 +86,7 @@
     "description": "Dirancang untuk memberikan suara jernih dan bass yang dalam, Speaker ini menawarkan kualitas suara yang optimal, baik untuk musik, film, maupun gaming.",
     "price": 32.99,
     "stars": 5,
-    "image": "images/speaker1.jpg"
+    "image": "images/speaker1.jpg",
+    "category": "Speaker"
   }
 ]

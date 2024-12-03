@@ -22,6 +22,10 @@ myApp.config([
                 controller: 'CheckoutController', 
                 templateUrl: 'view/checkout.html',
             })
+            .when('/search/:query', { 
+                controller: 'SearchController', 
+                templateUrl: 'view/search.html',
+            })
             .otherwise({ redirectTo: '/' });
     }
 ]); 

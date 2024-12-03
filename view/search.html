@@ -1,0 +1,14 @@
+<div class="search-results">
+    <h2>Search Results for "{{query}}"</h2>
+
+    <div ng-if="filteredProducts.length === 0">
+        <p>No products found matching "{{query}}</p>
+    </div>
+
+    <div ng-repeat="product in filteredProducts">
+        <div class="product-item">
+            <h3>{{product.name}}</h3>
+            <p>{{product.category}}</p>
+        </div>
+    </div>
+</div>

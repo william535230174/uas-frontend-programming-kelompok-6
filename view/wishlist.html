@@ -5,15 +5,17 @@
         </div>
         <p>Browse product and add your product to your wishlist here.</p>
 
+        <br><br>
+
         <div class="prod-row">
             <div class="prod-col" ng-repeat="item in wishlist">
+                <a class="remove-wishlist" ng-click="removeFromWishlist(item)">
+                    <i class='bx bxs-trash-alt'></i>
+                </a>
                 <img src="{{item.image}}" alt="Product Image">
                 <h4>{{item.name}}</h4>
                 <p class="price">Rp{{item.price | number}}</p>
                 <button class="add-to-cart" ng-click="addToCart(item)"> + Cart</button>
-                <a class="remove-from-wishlist" ng-click="removeFromWishlist(item)">
-                    <i class='bx bxs-trash-alt'></i>
-                </a>
             </div>
         </div>
     </div>

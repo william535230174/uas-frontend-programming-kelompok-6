@@ -25,7 +25,8 @@ myApp.controller('CheckoutController', ['$scope', function($scope) {
 
         if (allFilled) {
             localStorage.removeItem('cart'); 
-            window.location.href = 'thank-you.html'; 
+            alert("Payment Success!"); 
+            window.location.href = '#/'
         } 
     };
 }]);

@@ -1,11 +1,27 @@
 <div ng-controller="HomeController" id="view">
-    <section class="slider-container">
-        <div class="slider-wrapper">
-            <div class="slider">
-                <a ng-href="#">
-                    <img src="/assets/slider/slider-1.png" alt="slider-1">
-                </a>
+
+    <section class="slider-container" ng-controller="SliderController">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a ng-href="#/product">
+                        <img src="/assets/slider/slider-1.png" alt="slider">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a ng-href="#/product">
+                        <img src="/assets/slider/slider-2.png" alt="slider">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a ng-href="#/product">
+                        <img src="/assets/slider/slider-3.png" alt="slider">
+                    </a>
+                </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 

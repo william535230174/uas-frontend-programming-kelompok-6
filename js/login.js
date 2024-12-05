@@ -15,11 +15,11 @@ myApp.controller('AuthController', function ($scope, $location, $timeout) {
             (u) => u.username === $scope.user.username && u.password === $scope.user.password
         );
         if (user) {
-            $scope.showToast("Login berhasil!");
+            $scope.showToast("Login Successful!");
             alert("Login successful!");
             localStorage.setItem('isLoggedIn', true);
             localStorage.setItem('currentUser', JSON.stringify(user));
-            $location.path('#/');
+            window.location.href = '#/'
         } else {
             alert("Invalid username or password.");
         }
@@ -29,10 +29,10 @@ myApp.controller('AuthController', function ($scope, $location, $timeout) {
         if ($scope.user.password === $scope.user.confirmPassword) {
             $scope.users.push({ username: $scope.user.username, password: $scope.user.password });
             localStorage.setItem('users', JSON.stringify($scope.users));
-            $scope.showToast("Registrasi berhasil!");
-            alert("Registrasi berhasil!!");
+            $scope.showToast("Registration Success!");
+            alert("Registration Success!!");
             $scope.user = {username: '', password: '', confirmPassword: '' };
-            $location.path('#/'); 
+            window.location.href = '#/'
         } else {
             alert("Passwords do not match");
         }

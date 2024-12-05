@@ -52,7 +52,7 @@ app.controller('AuthController', function ($scope, $location, $timeout) {
             alert("Passwords do not match");
         }
     };
-     
+    
     $scope.goToRegister = function () {
         $location.path('/register');
     };

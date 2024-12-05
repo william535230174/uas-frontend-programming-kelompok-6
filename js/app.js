@@ -27,6 +27,14 @@ myApp.config([
                 templateUrl: 'view/product.html',
                 controllerAs: 'ctrl'
             })
+            .when('/login', { 
+                controller: 'AuthController as ctrl', 
+                templateUrl: 'view/login.html',
+            })
+            .when('/register', { 
+                controller: 'AuthController as ctrl', 
+                templateUrl: 'view/register.html',
+            })
             .otherwise({ redirectTo: '/' });
     }
 ]); 

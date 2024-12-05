@@ -1,19 +1,4 @@
-var app = angular.module('myApp', ['ngRoute']);
-
-app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl: 'templates/login.html',
-        })
-        .when('/register', {
-            templateUrl: 'templates/register.html',
-        })
-        .otherwise({
-            redirectTo: '/'
-        })
-}])
-
-app.controller('AuthController', function ($scope, $location, $timeout) {
+myApp.controller('AuthController', function ($scope, $location, $timeout) {
     $scope.users = JSON.parse(localStorage.getItem('users')) || [];
     $scope.user = {username: '', password: '', confirmPassword: '' };
     $scope.toastMessage = "";
@@ -34,7 +19,7 @@ app.controller('AuthController', function ($scope, $location, $timeout) {
             alert("Login successful!");
             localStorage.setItem('isLoggedIn', true);
             localStorage.setItem('currentUser', JSON.stringify(user));
-            $location.path('/dashboard');
+            $location.path('#/');
         } else {
             alert("Invalid username or password.");
         }
@@ -47,17 +32,17 @@ app.controller('AuthController', function ($scope, $location, $timeout) {
             $scope.showToast("Registrasi berhasil!");
             alert("Registrasi berhasil!!");
             $scope.user = {username: '', password: '', confirmPassword: '' };
-            $location.path('/'); 
+            $location.path('#/'); 
         } else {
             alert("Passwords do not match");
         }
     };
     
     $scope.goToRegister = function () {
-        $location.path('/register');
+        $location.path('#/register');
     };
 
     $scope.goToLogin = function () {
-        $location.path('/');
+        $location.path('#/login');
     };
 });

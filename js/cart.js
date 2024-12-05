@@ -41,7 +41,7 @@ myApp.controller('CartController', ['$scope', function ($scope) {
             $scope.shippingFee = $scope.cart.length > 0 ? 20000 : 0; 
             $scope.tax = $scope.subtotal * 0.1; 
             $scope.totalPayment = $scope.subtotal + $scope.tax + $scope.shippingFee; 
-            localStorage.setItem('cart', JSON.parse($scope.cart)); 
+            localStorage.setItem('cart', JSON.stringify($scope.cart)); 
         }; 
 
         $scope.initCart = function () {

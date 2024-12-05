@@ -3,9 +3,8 @@
         <div class="section-title">
             <h2>WISHLIST</h2>
         </div>
-        <p>Browse product and add your product to your wishlist here.</p>
 
-        <br><br>
+        <p ng-if="wishlist.length === 0">Browse product and add your product to your wishlist here.</p>
 
         <div class="prod-row">
             <div class="prod-col" ng-repeat="item in wishlist">

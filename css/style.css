@@ -383,6 +383,12 @@ button:hover {
 
 .prod-col h4 { 
     font-size: 1.05rem;
+    text-align: center;
+}
+
+.prod-col a { 
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .promo-banner { 
@@ -675,4 +681,18 @@ header h1 {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+}
+
+.btn i { 
+    font-size: 1.3rem;
+}
+
+.tools { 
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-to-cart {
+    margin-top: 10px;
+    justify-self: center;
 }

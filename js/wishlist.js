@@ -19,7 +19,7 @@ myApp.controller('WishlistController', ['$scope', function($scope) {
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        $scope.removeFromWishlist(item); 
+        $scope.removeFromWishlist(item) 
     }; 
 
     $scope.removeFromWishlist = function(item) { 

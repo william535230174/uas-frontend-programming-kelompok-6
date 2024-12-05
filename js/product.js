@@ -53,10 +53,10 @@ myApp.controller("ProductController", function ($http, $routeParams) {
     const existingProduct = ctrl.cart.find((item) => item.id === product.id);
 
     if (existingProduct) {
-      alert(product.name + " sudah ada di keranjang!");
+      alert(product.name + " Already in Cart!");
     } else {
       ctrl.cart.push({ ...product, quantity: 1 });
-      alert(product.name + " berhasil ditambahkan ke keranjang!");
+      alert(product.name + " Added to Cart!");
       localStorage.setItem("cart", JSON.stringify(ctrl.cart));
     }
   };
@@ -67,10 +67,10 @@ myApp.controller("ProductController", function ($http, $routeParams) {
     );
 
     if (existingProduct) {
-      alert(product.name + " sudah ada di wishlist!");
+      alert(product.name + " Already in Wishlist!");
     } else {
       ctrl.wishlist.push(product);
-      alert(product.name + " berhasil ditambahkan ke wishlist!");
+      alert(product.name + " Added to Wishlist!");
       localStorage.setItem("wishlist", JSON.stringify(ctrl.wishlist));
     }
   };

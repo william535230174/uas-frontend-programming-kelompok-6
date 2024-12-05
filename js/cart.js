@@ -11,7 +11,7 @@ myApp.controller('CartController', ['$scope', function ($scope) {
 
             $scope.tax = $scope.subtotal * 0.1;
             $scope.shippingFee = $scope.cart.length > 0 ? 20000 : 0;
-            $scope.total = $scope.subtotal + $scope.tax + $scope.shippingFee; 
+            $scope.totalPayment = $scope.subtotal + $scope.tax + $scope.shippingFee; 
         }; 
 
         $scope.formatCurrency = function (amount) {

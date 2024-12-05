@@ -1,0 +1,47 @@
+<div class="products" ng-controller="ProductController as ctrl">
+    <div class="search-container nav-search">
+        <input
+            type="text"
+            ng-model="ctrl.query"
+            placeholder="Search for products..."
+            class="search-input"
+            ng-keyup="ctrl.handleEnter($event)"
+        />
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div
+                class="card"
+                ng-repeat="product in ctrl.getFilteredProducts()"
+            >
+                <img
+                    ng-src="{{product.image}}"
+                    alt="{{product.name}}"
+                    class="product-image"
+                />
+                <h3>{{product.name}}</h3>
+                <p>{{product.description}}</p>
+                <div class="price">{{ctrl.formatCurrency(product.price)}}</div>
+                <div class="stars">
+                    <i
+                        class="fas fa-star"
+                        ng-repeat="star in [].constructor(product.stars) track by $index"
+                    ></i>
+                </div>
+                <div class="tools">
+                    <button class="btn" ng-click="ctrl.addToCart(product)">+ Cart</button>
+                    <button class="btn" ng-click="ctrl.addToWishlist(product)">
+                        <i class="bx bxs-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            ng-if="ctrl.getFilteredProducts().length === 0 && (ctrl.query || ctrl.category)"
+        >
+            <p>No products found.</p>
+        </div>
+    </div>
+</div>

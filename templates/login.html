@@ -1,0 +1,29 @@
+<div class="form-container">
+    <h2>Login</h2>
+    <form ng-submit="login()" novalidate>
+        <div class="form-group">
+            <label for="username">Username / Email</label>
+            <input
+                type="text"
+                id="username"
+                ng-model="user.username"
+                placeholder="Enter your username or email"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                ng-model="user.password"
+                placeholder="Enter your password"
+                required
+            >
+        </div>
+        <button type="submit" class="btn">Login</button>  
+        </form>
+        <div class="toggle">
+            <p>Don't have an account?<a href="#!/register">Register</a></p>
+        </div>
+    </div>

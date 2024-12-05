@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ecommerceApp">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Sign Up</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
-    <script src="app.js"></script>
-    <script src="controllers/AuthController.js"></script>
+    <title>Login & Register</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body ng-controller="AuthController">
+    <div class="toast" ng-show="toastMessage">
+        {{ toastMessage }}
+    </div>
+
     <div ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="app.js"></script>
+
 </body>
 </html>
